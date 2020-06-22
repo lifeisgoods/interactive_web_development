@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout</title>
+    <style>
+        .btn{
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    
+    <button class="btn">취소</button>
+    <script>
+        //밀리세컨드,ms 1/1000
+        let timeId;
+        const btn = document.querySelector('.btn');
+
+
+        function sample(){
+            console.log('sample!');
+        }
+        //내가 원하는 시간만큼 지연시킬때 자주사용함 setTimeout, 한번만 실행되고 clearTimeout으로 취소도 가능
+       timeId = setTimeout(sample, 3000); //3초뒤에 sample 실행
+
+        
+
+        btn.addEventListener('click', function(){
+            clearTimeout(timeId);
+        });
+
+    </script>
+</body>
+</html>

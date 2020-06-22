@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout</title>
+    <style>
+        .btn{
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    
+    <button class="btn">취소</button>
+    <script>
+        //밀리세컨드,ms 1/1000
+        let timeId;
+        const btn = document.querySelector('.btn');
+
+
+        function sample(){
+            console.log('sample!');
+        }
+        
+        //설정된 시간마다 반복을 하는거 setInterval
+        timeId = setInterval(sample, 1000); 
+
+        
+
+        btn.addEventListener('click',function(){
+            clearInterval(timeId);
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+/* reset */
+body{
+    font-family: 'Apple SD Gothic Neo', 'Roboto', 'Noto Sans KR', NanumGothic, 'Malgun Gothic',
+    sans-serif;
+    -webkit-overflow-scroling:touch;
+    color:#555;
+    background: #fff000;
+}
+
+.world{
+    /*scroll을 내렸을때 밑으로 내려가지않도록 포지션 fixed로 고정*/
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw; /*브라우저에 영역이 꽉 차게끔 뷰포트 단위를 사용*/
+    height: 100vh; 
+    /*.world의 공간을 3D로 변환 perspective*/
+    perspective: 1000px;
+}
+
+.stage{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    /*world에 perspective로 3D공간을 만들었지만 그 안에 자식들까지 3D효과가 잘 전달이 되도록 
+    중간에 껴 있는 container들에 transform-style: preserve-3d;를 적용해준다! IE에선 지원안함*/
+    transform-style: preserve-3d;
+}
+
+.house{
+    width: 100vw;
+    height: 100vh;
+    /*world에 perspective로 3D공간을 만들었지만 그 안에 자식들까지 3D효과가 잘 전달이 되도록 
+    중간에 껴 있는 container들에 transform-style: preserve-3d;를 적용해준다! IE에선 지원안함*/
+    transform-style: preserve-3d;
+}
+
+.wall{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255,255,255, 0.8);
+}
+
+.wall-content{
+    /*wall-content 가운데 정렬*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.wall-title{
+    font-size: 5rem;
+}
