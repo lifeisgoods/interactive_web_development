@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>움직이는 캐릭터 예제</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/03.css">
+</head>
+<body>
+    <div class="stage">
+        <div class="ilbuni"></div>
+        <div class="ilbuni"></div>
+        <div class="ilbuni"></div>
+    </div>
+
+    <script>
+       (function(){
+        
+        const ilbuniGroup = document.querySelectorAll('.ilbuni');
+        const stage = document.querySelector('.stage');
+
+            function ilbuniGroupHandler(e){
+                // stage.removeChild(this);
+                this.parentNode.removeChild(this);
+            }
+            
+            for(let i = 0; i < ilbuniGroup.length; i++){
+                     ilbuniGroup[i].addEventListener('click',ilbuniGroupHandler)
+             }
+
+        
+            }) ();
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS FLEX BOX </title>
+    <style>
+        .container{
+            display: flex; 
+            flex-direction: row;
+            justify-content:flex-start; /*메인축 위에서 아이템들을 정렬하는 것*/
+            align-items: stretch; /*메인축의 수직방향으로 정렬*/
+            height: 80vh; /*높이를 브라우저 높이의 50프로*/
+            background: gray;
+        }
+        .item{
+            flex-grow: 1; /*item에 glow를 넣으면 화면에 따라 item이 늘어남 컨텐츠를 제외한 여백을 비율로 나눠주는것*/
+            flex-basis: 0; /*원래 컨텐츠를 차지하는 공간을 어떻게 해줄 것인가*/
+            padding: 2em;
+            border: 3px solid black;
+            background: white;
+        }
+        /* .item:nth-child(1){flex-grow: 1;}
+        .item:nth-child(2){flex-grow: 5;}
+        .item:nth-child(3){flex-grow: 2;}
+        .item:nth-child(4){flex-grow: 3;}
+        .item:nth-child(5){flex-grow: 1;} */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">AAA</div>
+        <div class="item">B</div>
+        <div class="item">CCCCCC</div>
+        <div class="item">DDD</div>
+        <div class="item">E</div>
+    </div>
+</body>
+</html>

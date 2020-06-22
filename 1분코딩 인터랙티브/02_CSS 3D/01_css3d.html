@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 3D</title>
+    <style>
+        .world{ /*vh=viewportwidth / vh=viewportheight*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80vw;
+            height: 80vh;
+            background: yellow;
+            /* perspective: 500PX; 3D공간으로 변환 */
+        }
+        .card{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 150px;
+            border-radius: 0.5em;
+            font-size: 1.5rem;
+            background: red;
+            margin: 1em;
+            transform:perspective(500px) rotateY(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="world">
+        <div class="card">Card</div>
+        <div class="card">Card</div>
+        <div class="card">Card</div>
+    </div>
+</body>
+</html>

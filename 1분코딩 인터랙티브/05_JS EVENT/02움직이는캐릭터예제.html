@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>움직이는 캐릭터 예제 코드 리펙토링</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/03.css">
+</head>
+<body>
+    <div class="stage">
+        <div class="ilbuni"></div>
+        <div class="ilbuni"></div>
+        <div class="ilbuni"></div>
+    </div>
+
+    <script>
+        //이벤트 위임 기법
+       (function(){
+        const stage = document.querySelector('.stage');
+
+            function clickHandler(e){
+                //classList.cotains = 클래스 리스트를 가지고 있는지 안가지고 있는지 확인
+                if(e.target.classList.contains('ilbuni')){
+                    stage.removeChild(e.target);
+                }
+                
+            }
+            
+
+            stage.addEventListener('click', clickHandler)
+            }) ();
+        
+    </script>
+</body>
+</html>
