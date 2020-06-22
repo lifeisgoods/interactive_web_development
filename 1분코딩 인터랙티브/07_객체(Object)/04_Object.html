@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <script>
+        //생성자 (constructor) 관례적으로 이름을 대문자로 사용
+        function Person(nickname, age){
+            this.nickname = nickname;
+            this.age = age;
+        }
+        //nickname,age처럼 각 인스턴스객체들마다 다른값으로 개별적으로 세팅이 되야할 애들은
+        //생성자안에 this형태로 해주면되고
+        //introduce메서드처럼 그냥 똑같이 공유하면되는애들은 prototype객체에다가 정의해주면됨
+        //함수 하나에 쌍으로 딱 하나만 있는것 prototype 
+        Person.prototype.introduce = function(){
+                console.log('안녕하세요? 저는 ' + this.nickname + '이고, 나이는 ' +
+                 this.age + '살이에요.');
+            };
+
+        //생성자함수로 생성해낸 각각의 객체를 인스턴스(instance)라고 부름.
+        const person1 = new Person('낙꼬',14);
+        const person2 = new Person('한꼬',8);
+
+        person1.introduce();
+        person2.introduce();
+
+    </script>
+</body>
+</html>
