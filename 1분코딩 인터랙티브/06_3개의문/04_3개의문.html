@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3개의문</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/03_3개의문.css">
+</head>
+<body>
+    <div class="stage">
+        <div class="door">
+            <div class="door-back">
+                <div class="ilbuni"></div>
+            </div>
+            
+            <div class="door-body"></div>
+        </div>
+        <div class="door">
+            <div class="door-back">
+                <div class="ilbuni"></div>
+            </div>
+            
+            <div class="door-body"></div>
+        </div>
+        <div class="door">
+            <div class="door-back">
+                <div class="ilbuni"></div>
+            </div>
+            
+            <div class="door-body"></div>
+        </div>
+    </div>
+    <script>
+        (function(){
+            //1.stage클래스 불러오기
+        const stageElem = document.querySelector('.stage');
+        
+
+        function doorHandler(e){
+           const targetElem = e.target;
+           //현재 활성화된 아이템을 저장
+           let currentItem;
+
+            // const currentItem = document.querySelector('.door-opened');
+           //currentItem에 값이 있으면 door-opened 클래스를 제거.
+          if(currentItem){
+            currentItem.classList.remove('door-opened');  
+          }
+           
+           
+           //타겟엘림에 classlist에 door-body를 가지고 있으면! targetElem.parentNode.classList.add('door-opened');  실행
+            if(targetElem.classList.contains('door-body')){
+            targetElem.parentNode.classList.add('door-opened'); 
+            currentItem = targetElem.parentNode;
+            } 
+           
+        }
+
+        //2.stage클래스에 클릭이벤트 등록 눌렀을때 doorHandler실행 
+        stageElem.addEventListener('click', doorHandler);
+        }) ();
+    </script>
+</body>
+</html>
